@@ -1,5 +1,5 @@
 .profile__edit-button {
-    /* background-image: url(./images/vector-pen.svg);  */
+    background-image: url(../../../images/vector-pen.svg); 
     width: 24px;
     height: 24px;
     background-size: 10px 10px;

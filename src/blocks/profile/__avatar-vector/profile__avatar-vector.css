@@ -4,7 +4,7 @@
     left: 43%;
     width: 26px;
     height: 26px;
-    /* background-image: url("../../../images/Vector__avatar.png"); */
+    background-image: url("../../../images/Vector__avatar.png"); 
     background-size: cover;
     display:none;
     
