@@ -68,7 +68,7 @@ function App() {
           name="name"
           required
         />
-        <span class="form__input-error profile-name-error"></span>
+        <span className="form__input-error profile-name-error"></span>
         <input
           className="form__text form__text_type_job"
           placeholder="Профессия"
@@ -79,7 +79,7 @@ function App() {
           maxLength="200"
           required
         />
-        <span class="form__input-error job-input-error"></span>{" "}
+        <span className="form__input-error job-input-error"></span>{" "}
       </PopupWithForm>
       <PopupWithForm
         title="Новое место"
