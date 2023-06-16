@@ -7,7 +7,7 @@ function Card({ onCardClick, card }) {
 
   return (
     <div id="element">
-      <li class="element">
+      <li className="element">
         <img
           class="element__img"
           id="image"
@@ -15,14 +15,14 @@ function Card({ onCardClick, card }) {
           alt={card?.name}
           onClick={handleClick}
         />
-        <div class="element__info">
-          <h2 class="element__title">{card?.name}</h2>
-          <div class="element__like-container">
+        <div className="element__info">
+          <h2 className="element__title">{card?.name}</h2>
+          <div className="element__like-container">
             <button type="button" class="element__like"></button>
-            <span class="element__count-like">{card?.likes?.length}</span>
+            <span className="element__count-like">{card?.likes?.length}</span>
           </div>
         </div>
-        <button type="button" class="element__remove-btn"></button>
+        <button type="button" className="element__remove-btn"></button>
       </li>
     </div>
   );

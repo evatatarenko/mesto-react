@@ -59,24 +59,24 @@ function App() {
         onClose={() => setIsEditProfilePopupOpen(false)}
       >
         <input
-          class="form__text form__text_type_name"
+          className="form__text form__text_type_name"
           placeholder="Имя"
           type="text"
           id="profile-name"
-          minlength="2"
-          maxlength="40"
+          minLength="2"
+          maxLength="40"
           name="name"
           required
         />
         <span class="form__input-error profile-name-error"></span>
         <input
-          class="form__text form__text_type_job"
+          className="form__text form__text_type_job"
           placeholder="Профессия"
           type="text"
           id="job-input"
           name="job"
-          minlength="2"
-          maxlength="200"
+          minLength="2"
+          maxLength="200"
           required
         />
         <span class="form__input-error job-input-error"></span>{" "}
@@ -88,25 +88,25 @@ function App() {
         onClose={() => setIsAddPlacePopupOpen(false)}
       >
         <input
-          class="form__text form__text_type_title"
-          minlength="2"
-          maxlength="30"
+          className="form__text form__text_type_title"
+          minLength="2"
+          maxLength="30"
           id="title-input"
           type="text"
           name="name"
           placeholder="Название"
           required
         />
-        <span class="form__input-error title-input-error"></span>
+        <span className="form__input-error title-input-error"></span>
         <input
-          class="form__text form__text_type_link"
+          className="form__text form__text_type_link"
           id="link-input"
           type="url"
           name="link"
           placeholder="Ссылка на картинку"
           required
         />
-        <span class="form__input-error link-input-error"></span>
+        <span className="form__input-error link-input-error"></span>
       </PopupWithForm>
       <ImagePopup card={selectedCard} onClose={() => setSelectedCard(null)} />
     </div>
