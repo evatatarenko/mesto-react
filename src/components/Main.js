@@ -18,7 +18,11 @@ function Main({
       <section className="profile">
         <button className="profile__avatar-btn" onClick={onEditAvatar}>
           <div className="profile__avatar-vector"></div>
-          <img src={user?.avatar} className="profile__avatar" />
+          <img
+            src={user?.avatar}
+            alt={user?.name}
+            className="profile__avatar"
+          />
         </button>
         <div className="profile__info">
           <h1 className="profile__title">{user?.name}</h1>

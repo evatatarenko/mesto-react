@@ -10,7 +10,6 @@ const AddPlacePopup = ({ isOpen, onClose, onAddPlace }) => {
   function handleSubmit(evt) {
     evt.preventDefault();
     onAddPlace(formValues);
-    onClose();
   }
 
   return (

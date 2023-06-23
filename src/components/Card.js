@@ -15,43 +15,41 @@ function Card({ onCardClick, card, onCardLike, onCardDelete }) {
   function handleDeleteClick() {
     onCardDelete(card);
   }
-
   const isOwn = card.owner._id === user._id;
+  console.log(isOwn);
   const isLiked = card.likes.some((i) => i._id === user._id);
   const cardLikeButtonClassName = `element__like ${
     isLiked && "element__like_active"
   }`;
 
   return (
-    <div id="element">
-      <li className="element">
-        <img
-          className="element__img"
-          id="image"
-          src={card?.link}
-          alt={card?.name}
-          onClick={handleClick}
-        />
-        <div className="element__info">
-          <h2 className="element__title">{card?.name}</h2>
-          <div className="element__like-container">
-            <button
-              type="button"
-              className={cardLikeButtonClassName}
-              onClick={handleLikeClick}
-            ></button>
-            <span className="element__count-like">{card?.likes?.length}</span>
-          </div>
-        </div>
-        {isOwn && (
+    <li className="element">
+      <img
+        className="element__img"
+        id="image"
+        src={card?.link}
+        alt={card?.name}
+        onClick={handleClick}
+      />
+      <div className="element__info">
+        <h2 className="element__title">{card?.name}</h2>
+        <div className="element__like-container">
           <button
             type="button"
-            className="element__remove-btn"
-            onClick={handleDeleteClick}
+            className={cardLikeButtonClassName}
+            onClick={handleLikeClick}
           ></button>
-        )}
-      </li>
-    </div>
+          <span className="element__count-like">{card?.likes?.length}</span>
+        </div>
+      </div>
+      {isOwn && (
+        <button
+          type="button"
+          className="element__remove-btn"
+          onClick={handleDeleteClick}
+        ></button>
+      )}
+    </li>
   );
 }
 

@@ -3,7 +3,6 @@ import api from "../utils/api";
 import Header from "../components/Header.js";
 import Main from "../components/Main.js";
 import Footer from "../components/Footer.js";
-import PopupWithForm from "../components/PopupWithForm.js";
 import ImagePopup from "../components/ImagePopup.js";
 import EditProfilePopup from "../components/EditProfilePopup.js";
 import EditAvatarPopup from "../components/EditAvatarPopup.js";
@@ -59,6 +58,7 @@ function App() {
       .updateUserInfo(items)
       .then((user) => {
         setCurrentUser(user);
+        setIsEditProfilePopupOpen(false);
       })
       .catch((err) => {
         console.log(err);
@@ -70,6 +70,7 @@ function App() {
       .updateUserAvatar(item)
       .then((user) => {
         setCurrentUser(user);
+        setIsEditAvatarPopupOpen(false);
       })
       .catch((err) => {
         console.log(err);
@@ -81,6 +82,7 @@ function App() {
       .createCard(items)
       .then((newCard) => {
         setCards([newCard, ...cards]);
+        setIsAddPlacePopupOpen(false);
       })
       .catch((err) => {
         console.log(err);
@@ -102,6 +104,12 @@ function App() {
   function handleCardClick(card) {
     setSelectedCard(card);
   }
+
+  function closeAllPopups() {
+    setIsEditAvatarPopupOpen(false);
+    setIsEditProfilePopupOpen(false);
+    setIsAddPlacePopupOpen(false);
+  }
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="App">
@@ -119,16 +127,16 @@ function App() {
         <EditAvatarPopup
           onUpdateAvatar={handleUpdateAvatar}
           isOpen={isEditAvatarPopupOpen}
-          onClose={() => setIsEditAvatarPopupOpen(false)}
+          onClose={closeAllPopups}
         />
         <AddPlacePopup
           onAddPlace={handleAddPlaceSubmit}
           isOpen={isAddPlacePopupOpen}
-          onClose={() => setIsAddPlacePopupOpen(false)}
+          onClose={closeAllPopups}
         />
         <EditProfilePopup
           isOpen={isEditProfilePopupOpen}
-          onClose={() => setIsEditProfilePopupOpen(false)}
+          onClose={closeAllPopups}
           onUpdateUser={handleUpdateUser}
         />
         <ImagePopup card={selectedCard} onClose={() => setSelectedCard(null)} />
