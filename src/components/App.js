@@ -65,9 +65,9 @@ function App() {
       });
   }
 
-  function handleUpdateAvatar(item) {
+  function handleUpdateAvatar(avatar) {
     api
-      .updateUserAvatar(item)
+      .updateUserAvatar({ avatar })
       .then((user) => {
         setCurrentUser(user);
         setIsEditAvatarPopupOpen(false);
@@ -110,6 +110,7 @@ function App() {
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
   }
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="App">

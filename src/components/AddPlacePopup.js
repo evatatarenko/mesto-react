@@ -15,7 +15,7 @@ const AddPlacePopup = ({ isOpen, onClose, onAddPlace }) => {
   return (
     <PopupWithForm
       name="newcard"
-      title="Новое место2"
+      title="Новое место"
       btnText="Создать"
       isOpen={isOpen}
       onClose={onClose}
