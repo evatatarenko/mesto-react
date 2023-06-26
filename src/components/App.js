@@ -65,7 +65,8 @@ function App() {
       });
   }
 
-  function handleUpdateAvatar(avatar) {
+  function handleUpdateAvatar({ avatar }) {
+    console.log(avatar);
     api
       .updateUserAvatar({ avatar })
       .then((user) => {
